@@ -5,7 +5,14 @@
 
 ## Office Hours
 
+- Quicksort solution
+- Some code challenge websites
+- Creating snippets
+
 ## Lecture
+
+- Reminder: 20 Minute Rule
+- Quick review
 
 - Whats in a component?
   - a function with the first letter capitalized
@@ -20,4 +27,9 @@
 
 - Data Flow Tree
 
+- Lets get some insanity in here! - Exercise
+
 ## Questions
+
+- Whats the command we use to make a react project?
+- What is the code we write inside our react app called?

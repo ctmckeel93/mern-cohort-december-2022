@@ -14,7 +14,8 @@ const randomArrayGenerator = (size, limit) => {
   for (let i = 0; i <= size; i++) {
     resultArray.push(Math.floor(Math.random() * limit));
   }
-  return resultArray;
+  let noDupesSet = new Set(resultArray);
+  return [...noDupesSet];
 };
 
 // Partition the array
