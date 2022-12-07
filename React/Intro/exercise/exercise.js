@@ -22,6 +22,10 @@ const person = {
   ],
 };
 
+const { firstName, lastName, occupation, age, favoriteFoods, team } = person;
+const [chicken, mnc, cookies, ...sweets] = favoriteFoods;
+const [pikachu, charizard, greninja, sirfetchd, dragonite, lucario] = team;
+
 /*
     * Our activity for the day will be destructuring!
 
