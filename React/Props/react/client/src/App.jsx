@@ -9,7 +9,7 @@ import nbaTeamArray from "./data/chris_tuskan";
 import lakers from "./data/anthony";
 import aVeryUniqueArrayByRosie from "./data/rosie";
 import pokemon from "./data/angela";
-import getArray from "./data/Monica";
+import monicaArray from "./data/Monica";
 import starters from "./data/matt";
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
             <List list={jularray} myName={"Julian Victoriano"} />
             <List list={lakers} myName={"Anthony Kim"} />
             <List list={pokemon} myName={"Angela Bradford"} />
-            <List list={getArray()} myName={"Monica Doan"} />
+            <List list={monicaArray} myName={"Monica Doan"} />
             <List list={starters} myName={"Matthew Hensley"} />
         </div>
     );
