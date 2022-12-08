@@ -33,3 +33,5 @@
 
 - Whats the command we use to make a react project?
 - What is the code we write inside our react app called?
+
+LETS DO THIS!!!!!
