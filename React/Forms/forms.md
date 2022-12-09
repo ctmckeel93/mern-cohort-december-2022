@@ -1,4 +1,4 @@
-# Functional COmponents and Props - Week 1 Day 3
+# Functional Handling Forms - Week 2 Day 2
 
 - Office Hours: 4:00 PM PST
 - Lecture: 5:00 PM PST
