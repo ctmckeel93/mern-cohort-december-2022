@@ -1,15 +1,14 @@
 import { useState } from "react";
 import Display from "./Display";
-import DisplayList from "./DisplayList";
 
-const Form = (props) => {
+const Form = ({ addToList, list }) => {
     const initialFormDate = {
+        id: 1,
         name: "",
         noseColor: "",
         fur: "",
     };
 
-    const [reindeerList, setReindeerList] = useState([]);
     const [reindeer, setReindeer] = useState(initialFormDate);
     const [errors, setErrors] = useState([]);
 
@@ -34,23 +33,34 @@ const Form = (props) => {
         if (errorList.length > 0) {
             setErrors(errorList);
         } else {
+            addToList(reindeer);
             setReindeer(initialFormDate);
             setErrors([]);
         }
     };
 
     const onChangeHandler = (e) => {
-        setReindeer({ ...reindeer, [e.target.name]: e.target.value });
+        let increment = list[0] ? list[list.length - 1].id + 1 : 1;
+        setReindeer({
+            ...reindeer,
+            id: increment,
+            [e.target.name]: e.target.value,
+        });
     };
 
     return (
         <>
-            <div className="container d-flex justify-content-center flex-column">
-                <form onSubmit={onSubmitHandler}>
+            <div className="container-md">
+                <form
+                    className="d-flex p-4 mx-auto flex-column col-5 bg-dark text-light text-start"
+                    onSubmit={onSubmitHandler}
+                >
                     {errors.map((err, i) => (
-                        <p key={i}>{err}</p>
+                        <p className="text-danger" key={i}>
+                            {err}
+                        </p>
                     ))}
-                    <div className="col-5">
+                    <div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">
                                 Name
@@ -81,10 +91,8 @@ const Form = (props) => {
                                 onChange={onChangeHandler}
                             />
                         </div>
-                        <div class="mb-3 form-check">
-                            <label class="form-check-label" for="exampleCheck1">
-                                Fur Pattern
-                            </label>
+                        <div class="mb-3">
+                            <label for="exampleCheck1">Fur Pattern</label>
                             <input
                                 name="fur"
                                 type="text"
@@ -104,7 +112,6 @@ const Form = (props) => {
                     color={reindeer.noseColor}
                     fur={reindeer.fur}
                 />
-                <DisplayList list={reindeerList} />
             </div>
         </>
     );

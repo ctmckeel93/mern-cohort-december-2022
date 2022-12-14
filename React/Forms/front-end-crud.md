@@ -11,10 +11,10 @@
 ### Exercise
 
 - Make a component for a form
-- Make a component that will hold a list
+- Set state accordingly
 - use the form to create a new record
 - Add the new record to your list
-- display all of the items in your list  
+- display all of the items in your list at the bottom of the component  
 
 ## Lecture
 
@@ -45,11 +45,3 @@
     - Lift state so that both our form and our DisplayList can access what they need shared between them
     - have a delete button
     - have an input for editing
-
-## Questions
-
-### After
-
-- When should we lift state?
-- What is CRUD?
-- How do we remove an item from our list and update it on the rendered list?
