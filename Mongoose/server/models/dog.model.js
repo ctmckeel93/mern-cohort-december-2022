@@ -33,6 +33,10 @@ const DogSchema = new mongoose.Schema(
             type: Boolean,
             required: true,
         },
+        toys: {
+            type: Array,
+            required: false,
+        },
     },
     { timestamps: true }
 );

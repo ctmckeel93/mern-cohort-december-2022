@@ -32,3 +32,5 @@
     - create
     - findOneAndUpdate
     - findOneAndDelete
+
+# Pulling data on react from the backend
