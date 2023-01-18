@@ -9,7 +9,7 @@ module.exports = {
             );
     },
     findOne: (req, res) => {
-        Candy.findById(req, params.id)
+        Candy.findById(req.params.id)
             .then((candy) => res.json(candy))
             .catch((err) =>
                 res.json({ message: "Something went wrong", error: err })
