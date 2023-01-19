@@ -63,3 +63,16 @@
 
     - Component should use useEffect and axios to call to the findAll route on our express server
     - once the data is retrieved, use map to display the info for each object in our db
+
+### Update
+
+    - make sure you are passing the id either through the body or as a parameter in the url
+    - findByIdAndUpdate works best and requires the least amount of code
+    - axios.put
+
+### Delete
+
+    - All thats needed is the id. 
+    - Backend will not respond with anything but a success message
+    - axios.delete
+    - remember to filter on the frontend. The data wont reflect the database until it fetches again

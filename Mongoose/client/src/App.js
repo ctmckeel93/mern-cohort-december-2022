@@ -9,7 +9,7 @@ function App() {
             .then((response) => console.log(response.data))
             .catch((err) => console.log(err));
     }, []);
-    return <div className="App"></div>;
+    return (<div className="App"></div>);
 }
 
 export default App;

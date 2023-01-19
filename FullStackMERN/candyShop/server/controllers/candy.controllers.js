@@ -22,4 +22,14 @@ module.exports = {
                 res.json({ message: "Something went wrong", error: err })
             );
     },
+    update: (req, res) => {
+        Candy.findByIdAndUpdate(req.params.id, req.body, {new:true})
+            .then(updatedCandy => res.json(updatedCandy))
+            .catch(err => res.json({message: "Something went wrong with updating candy", error: err}))
+    },
+    delete: (req, res) => {
+        Candy.findByIdAndDelete(req.params.id)
+            .then(deletedCandy => res.json(deletedCandy))
+            .catch(err => res.json({message: "Something went wrong deleting", error: err}))
+    }
 };
