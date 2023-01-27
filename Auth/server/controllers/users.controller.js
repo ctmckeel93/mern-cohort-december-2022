@@ -37,6 +37,8 @@ module.exports = {
         const userToken = jwt.sign({
             id: user._id
         }, process.env.SECRET_KEY);
+
+        console.log(userToken);
      
         // note that the response object allows chained calls to cookie and json
         res
