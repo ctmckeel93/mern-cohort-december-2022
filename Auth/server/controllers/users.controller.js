@@ -16,7 +16,10 @@ module.exports = {
 
                 res
                     .cookie("usertoken", userToken, {httpOnly:true})
-                    .json({message: "Successful registration", user: newUser})
+                    .json({message: "Successful registration", user: {
+                        id: newUser._id,
+                        username: user.username
+                    }})
             })
             .catch(err => res.status(400).json({message: "Problem with registration", error: err}))
     },
@@ -25,7 +28,7 @@ module.exports = {
         if (user === null) {
             return res.status(400).json({message: "Invalid login"})
         }
-        console.log(user)
+        // console.log(user)
 
         // CONGRATULATIONS YOU FOUND THE USER IN THE DATABASE
         const correctPassword = await bcrypt.compare(req.body.password, user.password)
@@ -35,7 +38,7 @@ module.exports = {
         }
 
         const userToken = jwt.sign({
-            id: user._id
+            id: user._id,
         }, process.env.SECRET_KEY);
 
         console.log(userToken);
@@ -45,7 +48,10 @@ module.exports = {
             .cookie("usertoken", userToken, {
                 httpOnly: true
             })
-            .json({ msg: "success!" });
+            .json({ msg: "success!", userInfo: {
+                id: user._id,
+                username: user.username
+            } });
 
 
     },
