@@ -12,6 +12,7 @@ import PrivateChat from './components/PrivateChat';
 function App() {
 
   const [authorized, setAuthorized] = useState("");
+  console.log("Having too much fun with this");
   return (
     <div className="App">
       <BrowserRouter>
