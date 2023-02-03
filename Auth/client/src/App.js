@@ -8,6 +8,7 @@ import { UserProvider } from './context/UserContext';
 import Nav from './components/Nav';
 import CreateRoom from './components/CreateRoom';
 import PrivateChat from './components/PrivateChat';
+import Lobby from './components/Lobby';
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
               <Route path="/logout" element={<Logout/>}/>
               <Route path="/users" element={<ShowUsers setAuthorized={setAuthorized}/>}/>
               <Route path="/rooms" element={<CreateRoom/>}/>
+              <Route path="/rooms/all" element={<Lobby/>}/>
               <Route path="/rooms/:roomid" element={<PrivateChat/>}/>
           </Routes>
         </UserProvider>

@@ -18,6 +18,11 @@ const Nav = (props) => {
                                 Make a private room
                             </NavLink>
                         </li>
+                        <li className="nav-item">
+                            <NavLink className="nav-link" to={"/rooms/all"}>
+                                Join a private room
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </nav>

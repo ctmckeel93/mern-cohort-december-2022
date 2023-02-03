@@ -13,7 +13,10 @@ app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
 require('./config/mongoose.config')
-require('./routes/users.routes')(app);
+const UserRoutes = require('./routes/users.routes')
+const RoomRoutes = require('./routes/rooms.routes');
+UserRoutes(app);
+RoomRoutes(app);
 
 const server = app.listen(port, () => console.log("Listening on port", port));
 
